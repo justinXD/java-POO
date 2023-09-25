@@ -10,6 +10,10 @@ public class Main {
         Doctor myDoctor2 = new Doctor();
         myDoctor2.showId();
 
-        showMenu();
+        // showMenu();
+
+        Patient patient = new Patient("papucho", "papucho@email.com");
+        patient.setWeight(59.7);
+        System.out.println(patient.getWeight());
     }
 }
