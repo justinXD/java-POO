@@ -1,36 +1,41 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Doctor {
+public class Doctor extends User {
     // atributos
-    static int id; // el static nos permite hacer el autoincremental de la variable sin importar la
-                   // instanciacion
+    // static int id; // el static nos permite hacer el autoincremental de la
+    // variable sin importar la
+    // instanciacion
     // int ID; una variable en mayusculas indica una constante.
-    private String name;
     private String speciality;
-    private String email;
 
     // constructor
-    Doctor() {
-        System.out.println("Esto se manda a imprimir desde el constructor");
+    // Doctor() {
+    // System.out.println("Esto se manda a imprimir desde el constructor");
+    // }
+
+    public String getSpeciality() {
+        return speciality;
     }
 
-    // sobrecarga del constructor
-    Doctor(String name, String speciality) {
-        System.out.println("Esto se manda a imprimir desde el constructor, constructor sobrecargado");
-        id++;
-        this.name = name;
+    public void setSpeciality(String speciality) {
         this.speciality = speciality;
     }
 
-    // methods
-    public void showName() {
-        System.out.println(name);
+    // sobrecarga del constructor
+    Doctor(String name, String email) {
+        super(name, email);
+        System.out.println("Esto se manda a imprimir desde el constructor, constructor sobrecargado");
     }
 
-    public void showId() {
-        System.out.println("ID Doctor: " + id);
-    }
+    // methods
+    // public void showName() {
+    // System.out.println(name);
+    // }
+
+    // public void showId() {
+    // System.out.println("ID Doctor: " + id);
+    // }
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        Doctor myDoctor = new Doctor();
+        Doctor myDoctor = new Doctor("Papucho", "papucho@mail.com");
         // myDoctor.name = "Papucho";
         // myDoctor.showName();
         // myDoctor.showId();
@@ -27,5 +27,7 @@ public class Main {
         Patient patient = new Patient("papucho", "papucho@email.com");
         patient.setWeight(59.7);
         System.out.println(patient.getWeight());
+
+        System.out.println(patient.toString());
     }
 }
