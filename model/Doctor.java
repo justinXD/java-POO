@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -23,7 +25,7 @@ public class Doctor extends User {
     }
 
     // sobrecarga del constructor
-    Doctor(String name, String email) {
+    public Doctor(String name, String email) {
         super(name, email);
         System.out.println("Esto se manda a imprimir desde el constructor, constructor sobrecargado");
     }
