@@ -5,7 +5,13 @@ public class Nurse extends User {
 
     Nurse(String name, String email) {
         super(name, email);
-        // TODO Auto-generated constructor stub
     }
 
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
 }

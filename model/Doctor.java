@@ -75,5 +75,13 @@ public class Doctor extends User {
         public void setTime(String time) {
             this.time = time;
         }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
     }
 }
