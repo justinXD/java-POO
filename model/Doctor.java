@@ -49,6 +49,13 @@ public class Doctor extends User {
         return availableAppointments;
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println("Hospital real san jose");
+        System.out.println("Departamendo: pediatria");
+        System.out.println("Especialidad: pediatria");
+    }
+
     // clase anidada
     public static class AvailableAppointment {
         private int id;

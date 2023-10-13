@@ -32,4 +32,10 @@ public class Patient extends User {
     public String toString() {
         return super.toString() + "\nbithday: " + bithday;
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Historial del paciente");
+    }
 }
