@@ -1,12 +1,20 @@
 package ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.print.Doc;
+
+import model.Doctor;
+import model.Patient;
 
 public class UIMenu {
 
     public static final String[] MONTHS = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
             "Septiembre", "Octubre", "Noviembre", "Diciembre" }; // final nos indica que es constante i las mayusculas
                                                                  // tambien
+    public static Doctor doctorLogged;
+    public static Patient patientLogged;
 
     public static void showMenu() {
         System.out.println("Welcome to My Appointments");
@@ -22,16 +30,15 @@ public class UIMenu {
                 Scanner sc = new Scanner(System.in);
                 response = Integer.valueOf(sc.nextLine());
             } catch (NumberFormatException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             switch (response) {
                 case 1:
-                    System.out.println("Doctor");
+                    authUser(1);
                     break;
                 case 2:
                     response = 0;
-                    showPatientMenu();
+                    authUser(2);
 
                     break;
                 case 0:
@@ -41,6 +48,45 @@ public class UIMenu {
                     System.out.println("Please select a correct answer");
             }
         } while (response != 0);
+    }
+
+    private static void authUser(int userType) {
+        ArrayList<Doctor> doctors = new ArrayList<>(null);
+        doctors.add(new Doctor("justin", "mail@mail.com"));
+        doctors.add(new Doctor("karen", "karen@mail.com"));
+        doctors.add(new Doctor("anahi", "anahi@mail.com"));
+
+        ArrayList<Patient> patients = new ArrayList(null);
+        patients.add(new Patient("roberto", "roberto@mail.com"));
+        patients.add(new Patient("Carlos", "carlos@mail.com"));
+        patients.add(new Patient("alexis", "alexis@mail.com"));
+
+        boolean emailCorrect = false;
+        do {
+            System.out.println("Insert ypur email");
+            Scanner sc = new Scanner(System.in);
+            String email = sc.nextLine();
+
+            if (userType == 1) {
+                for (Doctor d : doctors) {
+                    if (d.getEmail().equals(email)) {
+                        emailCorrect = true;
+                        doctorLogged = d;
+                        // showDoctorMenu();
+                    }
+                }
+            }
+            if (userType == 2) {
+                for (Patient p : patients) {
+                    if (p.getEmail().equals(email)) {
+                        emailCorrect = true;
+                        patientLogged = p;
+                        showPatientMenu();
+                    }
+                }
+            }
+        } while (!emailCorrect);
+
     }
 
     static void showPatientMenu() {
@@ -56,7 +102,6 @@ public class UIMenu {
                 Scanner sc = new Scanner(System.in);
                 response = Integer.valueOf(sc.nextLine());
             } catch (NumberFormatException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             switch (response) {
