@@ -19,10 +19,10 @@ public class Main {
         // showMenu();
 
         // nested classes
-        myDoctor.addAvailableAppointment(new Date(), "3 pm");
-        myDoctor.addAvailableAppointment(new Date(), "4 pm");
-        myDoctor.addAvailableAppointment(new Date(), "5 pm");
-        myDoctor.addAvailableAppointment(new Date(), "6 pm");
+        myDoctor.addAvailableAppointment("20/09/2023", "3 pm");
+        myDoctor.addAvailableAppointment("20/09/2023", "4 pm");
+        myDoctor.addAvailableAppointment("20/09/2023", "5 pm");
+        myDoctor.addAvailableAppointment("20/09/2023", "6 pm");
 
         for (Doctor.AvailableAppointment aA : myDoctor.getAvailableAppointments()) {
             System.out.println(aA.getDate() + " " + aA.getTime());
